@@ -16,7 +16,7 @@
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,600..900;1,600..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,600..900;1,600..900&family=Fredoka:wght@500;600;700&family=Jua&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <style>
   * { box-sizing: border-box; }
@@ -47,19 +47,28 @@
   <div style="position:absolute;bottom:150px;right:70px;color:#fff;font-size:10px;animation:tw 3.6s .3s ease-in-out infinite;">✦</div>
   <div style="position:absolute;bottom:320px;right:40px;color:#fff;font-size:16px;animation:tw 2.6s .8s ease-in-out infinite;">✦</div>
 
-  <!-- vending hero background (z-index backmost) -->
-  <div style="position:absolute;z-index:0;left:0;right:0;bottom:120px;display:flex;justify-content:center;pointer-events:none;">
-    <img src="vending_hero.png" alt="FEDIT vending machine" style="width:86%;max-width:410px;height:auto;animation:floatY 6s ease-in-out infinite;"/>
-  </div>
-
   <img src="fedit_wordmark.png" alt="FEDIT" style="height:22px;width:auto;display:block;animation:pop .6s ease both;position:relative;z-index:2;"/>
 
-  <div style="font-family:'Archivo',sans-serif;font-style:italic;font-weight:900;font-size:52px;line-height:.92;letter-spacing:-.02em;text-align:center;margin-top:24px;background:linear-gradient(175deg,#ffffff 30%,#9E96F5 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 6px 26px rgba(124,121,242,.5));animation:feUp .7s .05s ease both;position:relative;z-index:2;">TREND<br>LEVEL TEST</div>
+  <div style="position:relative;margin-top:30px;text-align:center;animation:feUp .7s .05s ease both;z-index:2;">
+    <div style="font-family:'Fredoka',sans-serif;font-weight:700;color:#A6D2F8;letter-spacing:.06em;filter:drop-shadow(0 6px 22px rgba(124,168,240,.4));">
+      <div style="font-size:64px;line-height:1.04;">
+        <span style="display:inline-block;transform:rotate(-5deg);">T</span><span style="display:inline-block;transform:rotate(4deg);">R</span><span style="display:inline-block;transform:rotate(-3deg);">E</span><span style="display:inline-block;transform:rotate(4deg);">N</span><span style="display:inline-block;transform:rotate(-4deg);">D</span>
+      </div>
+      <div style="font-size:64px;line-height:1.04;">
+        <span style="display:inline-block;transform:rotate(4deg);">L</span><span style="display:inline-block;transform:rotate(-4deg);">E</span><span style="display:inline-block;transform:rotate(4deg);">V</span><span style="display:inline-block;transform:rotate(-5deg);">E</span><span style="display:inline-block;transform:rotate(4deg);">L</span>
+      </div>
+      <div style="font-size:64px;line-height:1.04;">
+        <span style="display:inline-block;transform:rotate(-5deg);">T</span><span style="display:inline-block;transform:rotate(4deg);">E</span><span style="display:inline-block;transform:rotate(-3deg);">S</span><span style="display:inline-block;transform:rotate(5deg);">T</span>
+      </div>
+    </div>
+  </div>
 
-  <div style="font-size:17px;font-weight:800;color:#fff;margin-top:26px;text-align:center;animation:feUp .7s .2s ease both;position:relative;z-index:2;"><span style="color:#8E88F5;">FEDIT</span> <span style="color:#8E88F5;">2026-2027</span> 패션 감도 능력고사</div>
+  <div style="font-size:17px;font-weight:800;color:#fff;margin-top:26px;text-align:center;animation:feUp .7s .2s ease both;position:relative;z-index:2;"><span style="color:#EFDA2E;">FEDIT</span> <span style="color:#EFDA2E;">2026-2027</span> 패션 감도 능력고사</div>
   <div style="font-size:13px;color:#8E8E99;margin-top:9px;text-align:center;font-weight:500;animation:feUp .7s .28s ease both;position:relative;z-index:2;">나는 패션 트렌드 빠삭러? 지금 내 레벨 테스트하기</div>
 
-  <div style="flex:1;min-height:360px;"></div>
+  <div style="flex:1;min-height:180px;display:flex;align-items:center;justify-content:center;width:100%;position:relative;z-index:1;">
+    <img src="vending_hero.png" alt="FEDIT vending machine" style="width:86%;max-width:410px;height:auto;animation:floatY 6s ease-in-out infinite;"/>
+  </div>
 
   <button onClick="{{ start }}" style="width:100%;border:none;background:#fff;color:#111;padding:22px;font-family:'Pretendard';font-size:16px;font-weight:800;letter-spacing:.28em;border-radius:100px;cursor:pointer;animation:glow 2.6s ease-in-out infinite;position:relative;z-index:2;" style-hover="transform:translateY(-2px);">START</button>
 </div>
@@ -78,8 +87,8 @@
     </sc-for>
   </div>
 
-  <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px 0;">
-    <div style="font-family:'Archivo',sans-serif;font-weight:900;font-size:40px;color:#17171C;letter-spacing:-.01em;animation:feUp .4s ease both;">{{ q.qlabel }}</div>
+  <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:48px 0 20px;">
+    <div style="height:48px;display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;font-weight:900;font-size:40px;color:#17171C;letter-spacing:-.01em;animation:feIn .4s ease both;">{{ q.qlabel }}</div>
     <p style="font-size:15.5px;line-height:1.62;font-weight:600;color:#3a3a42;text-align:center;margin:18px 0 0;max-width:340px;text-wrap:pretty;animation:feUp .45s .05s ease both;">{{ q.text }}<b style="color:#17171C;">{{ q.bold }}</b></p>
     <div style="font-size:12px;color:#a2a2ac;margin-top:14px;font-weight:500;animation:feIn .6s .1s ease both;">{{ q.target }}</div>
 
@@ -279,13 +288,11 @@
               <rect x="12.5" y="22.5" width="35" height="33" rx="4" fill="none" stroke="#4b4551" stroke-width="2.4"/>
               <rect x="64.5" y="22.5" width="35" height="33" rx="4" fill="none" stroke="#4b4551" stroke-width="2.4"/>
               <path d="M16 30 Q22 22 34 22" fill="none" stroke="#6d6773" stroke-width="2.6" stroke-linecap="round" opacity="0.85"/>
-              <path d="M68 30 Q74 22 86 22" fill="none" stroke="#6d6773" stroke-width="2.6" stroke-linecap="round" opacity="0.85"/>
               <path d="M19 47 L33 27" stroke="#fff" stroke-width="4.5" stroke-linecap="round" opacity="0.9"/>
               <path d="M71 47 L85 27" stroke="#fff" stroke-width="4.5" stroke-linecap="round" opacity="0.9"/>
             </g>
           </g>
           <path d="M104 8 Q105.4 12.6 110 14 Q105.4 15.4 104 20 Q102.6 15.4 98 14 Q102.6 12.6 104 8 Z" fill="#F5C93B"/>
-          <path d="M20 22 Q21 25 24 26 Q21 27 20 30 Q19 27 16 26 Q19 25 20 22 Z" fill="#EC7FB0"/>
           <circle cx="112" cy="40" r="2.2" fill="#7C79F2"/>
         </svg>
       </sc-if>
@@ -375,7 +382,7 @@ const TYPES = {
   nigel: {
     lv:'Lv.3', lvShort:'LV.3', title:'트렌드 세터', name:'나이젤형', emoji:'🤓',
     typeNum:'02', code:'EDITORIAL', krTag:'차세대 에디터',
-    quote:'"트렌드는 따라가는 게 아니라 만드는 거야 🔥"',
+    quote:'"트렌드는 따라가는 게 아니라\n만드는 거야 🔥"',
     desc:'브랜드 화제성부터 시즌 무드까지 꿰뚫는 진짜 실력자. 주변에서 "옷 잘 입는다"는 소리 좀 듣죠? FEDIT 에디터 각입니다.',
     brands:'Umer · The Barnnet · Glowny', mbti:'INFJ · ENFJ', rarity:'TOP 22%',
     paletteText:'모닝 옐로우 · 클라우드 댄서 · 카멜',
